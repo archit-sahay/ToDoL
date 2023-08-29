@@ -31,6 +31,7 @@ window.addEventListener('load', () => {
 		task_edit_el.classList.add('edit');
 		task_edit_el.innerText = 'Edit';
 
+		task_edit_el.innerHTML = '<i class="fas fa-pencil-alt"></i>';
 		const task_delete_el = document.createElement('button');
 		task_delete_el.classList.add('delete');
 		task_delete_el.innerText = 'Delete';
@@ -44,19 +45,23 @@ window.addEventListener('load', () => {
 
 		input.value = '';
 
+		
 		task_edit_el.addEventListener('click', (e) => {
-			if (task_edit_el.innerText.toLowerCase() == "edit") {
-				task_edit_el.innerText = "Save";
-				task_input_el.removeAttribute("readonly");
-				task_input_el.focus();
+			if (task_edit_el.classList.contains('editing')) {
+				task_edit_el.classList.remove('editing');
+				task_input_el.setAttribute('readonly', 'readonly');
+				task_edit_el.innerHTML = '<i class="fas fa-pencil-alt"></i>';
 			} else {
-				task_edit_el.innerText = "Edit";
-				task_input_el.setAttribute("readonly", "readonly");
+				task_edit_el.classList.add('editing');
+				task_input_el.removeAttribute('readonly');
+				task_input_el.focus();
+				task_edit_el.innerHTML = '<i class="fas fa-check"></i>';
 			}
 		});
-
 		task_delete_el.addEventListener('click', (e) => {
 			list_el.removeChild(task_el);
 		});
+		task_delete_el.innerHTML='<i class="fas fa-trash"></i>';
+		
 	});
 });
