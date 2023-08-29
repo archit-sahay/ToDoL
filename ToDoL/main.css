@@ -2,7 +2,7 @@
 	--dark: #374151;
 	--darker: #1F2937;
 	--darkest: #111827;
-	--grey: #6B7280;
+	--grey: #c9d4eb;
 	--pink: #EC4899;
 	--purple: #8B5CF6;
 	--light: #EEE;
@@ -18,7 +18,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
-	color: #FFF;
+	color: #ffffffa9;
 	background-color: var(--dark);
 }
 
@@ -62,22 +62,25 @@ input, button {
 }
 
 #new-task-submit {
-	color: var(--pink);
-	font-size: 1.25rem;
-	font-weight: 700;
-	background-image: linear-gradient(to right, var(--pink), var(--purple));
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	cursor: pointer;
-	transition: 0.4s;
+    background: linear-gradient(to right, var(--pink), var(--purple));
+    cursor: pointer;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--pink);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: 0.4s;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+
 }
 
 #new-task-submit:hover {
-	opacity: 0.8;
+    opacity: 0.8;
 }
 
 #new-task-submit:active {
-	opacity: 0.6;
+    opacity: 0.6;
 }
 
 main {
